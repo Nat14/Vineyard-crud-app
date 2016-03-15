@@ -12,8 +12,14 @@
 
 <p>
   <strong>Wines:</strong>
-  <%= @vineyard.wines.map {|x| x.name} %>
+  <% @vineyard.wines.each do |x| %>
+  <li><%= link_to x.name, x %></li>
+
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_vineyard_path(@vineyard) %> |
 <%= link_to 'Back', vineyards_path %>
+<br/>
+<%= link_to 'New Wine', new_vineyard_wine_path(@vineyard) %>
+<%= button_to 'New Wine', new_vineyard_wine_path(@vineyard), method: :get %>

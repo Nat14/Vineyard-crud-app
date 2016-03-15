@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :wines, except: [:new, :create]
   resources :vineyards do
-    resources :wines, only: [:new, :create]
+    resources :wines, only: [:new, :create, :update]
   end
 
 

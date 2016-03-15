@@ -19,7 +19,7 @@
         <td><%= wine.name %></td>
         <td><%= wine.year %></td>
         <td><%= wine.description %></td>
-        <td><%= wine.vineyard %></td>
+        <td><%= link_to wine.vineyard.name, wine.vineyard %></td>
         <td><%= link_to 'Show', wine %></td>
         <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
         <td><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,5 +29,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Wine', new_wine_path %>

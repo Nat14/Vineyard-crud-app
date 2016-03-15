@@ -54,6 +54,7 @@ class VineyardsController < ApplicationController
   # DELETE /vineyards/1
   # DELETE /vineyards/1.json
   def destroy
+    @vineyard.wines.destroy_all
     @vineyard.destroy
     respond_to do |format|
       format.html { redirect_to vineyards_url, notice: 'Vineyard was successfully destroyed.' }

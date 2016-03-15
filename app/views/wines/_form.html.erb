@@ -1,4 +1,4 @@
-<%= form_for(@wine) do |f| %>
+<%= form_for([@wine.vineyard, @wine]) do |f| %>
   <% if @wine.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
@@ -23,10 +23,9 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :vineyard_id %><br>
-    <%= f.text_field :vineyard_id %>
-  </div>
+  <label for="vineyard">Vineyard</label>
+  <span id="vineyard"><%= @wine.vineyard.name %></span>
+  <br/><br/>
   <div class="actions">
     <%= f.submit %>
   </div>
