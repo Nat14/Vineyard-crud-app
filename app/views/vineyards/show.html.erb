@@ -10,5 +10,10 @@
   <%= @vineyard.location %>
 </p>
 
+<p>
+  <strong>Wines:</strong>
+  <%= @vineyard.wines.map {|x| x.name} %>
+</p>
+
 <%= link_to 'Edit', edit_vineyard_path(@vineyard) %> |
 <%= link_to 'Back', vineyards_path %>
